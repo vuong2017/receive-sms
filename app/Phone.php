@@ -8,7 +8,7 @@ class Phone extends Model
 {
     protected $table = "phones";
     protected $fillable = [
-        'textnow_id', 'phone_country_id', 'phone_number', 'message'
+        'textnow_id', 'phone_country_id', 'phone_number'
     ];
 
     public function textNow()
