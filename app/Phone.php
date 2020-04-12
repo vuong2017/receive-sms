@@ -15,4 +15,8 @@ class Phone extends Model
     {
         return $this->belongsTo('App\TextNow');
     }
+
+    public function phoneMessage() {
+        return $this->hasMany('App\PhoneMessage');
+    }
 }
