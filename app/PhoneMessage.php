@@ -14,6 +14,6 @@ class PhoneMessage extends Model
 
     public function phone()
     {
-        return $this->belongsTo('App\Phone');
+        return $this->belongsTo('App\Phone', 'phone_id');
     }
 }

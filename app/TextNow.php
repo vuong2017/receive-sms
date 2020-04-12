@@ -12,9 +12,9 @@ class TextNow extends Model
         'login_by', 'cookie', 'user_name_textnow', 'create_by'
     ];
 
-    public function phone()
+    public function phones()
     {
-        return $this->hasOne('App\Phone');
+        return $this->hasMany('App\Phone', 'textnow_id');
     }
 
 }

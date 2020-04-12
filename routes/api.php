@@ -15,6 +15,7 @@ use Ixudra\Curl\Facades\Curl;
 */
 Route::middleware(['auth:api'])->group(function () {
     Route::resource('textnow', 'TextNowController');
+    Route::resource('phone', 'PhoneController');
 });
 
 Route::prefix('auth')->group(function () {

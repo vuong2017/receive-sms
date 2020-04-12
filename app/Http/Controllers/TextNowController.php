@@ -7,7 +7,8 @@ use App\Http\Resources\TextNow\TextNowCollection;
 use App\Http\Resources\TextNow\TextNowResource;
 use App\Repositories\TextNow\TextNowRepositoryInterface;
 
-use App\TextNow;
+use Illuminate\Http\Request;
+
 
 class TextNowController extends Controller
 {
@@ -17,9 +18,13 @@ class TextNowController extends Controller
         $this->textNowRepository = $textNowRepository;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $textNows = $this->textNowRepository->getDataPagination(20);
+        $with = [];
+        if ($request->with) {
+            $with = explode(",", $request->with);
+        }
+        $textNows = $this->textNowRepository->getDataPagination($with, 20);
         return new TextNowCollection($textNows);
     }
 
