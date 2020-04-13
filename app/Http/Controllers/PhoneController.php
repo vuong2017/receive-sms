@@ -32,22 +32,22 @@ class PhoneController extends Controller
     public function store(PhoneRequest $request)
     {
         $data = $request->all();
-        $textNow = $this->phoneRepository->createOne($data);
-        return new PhoneResource($textNow);
+        $phone = $this->phoneRepository->createOne($data);
+        return new PhoneResource($phone);
     }
 
 
     public function show($id)
     {
-        $textNow = $this->phoneRepository->getOneById($id);
-        return new PhoneResource($textNow);
+        $phone = $this->phoneRepository->getOneById($id);
+        return new PhoneResource($phone);
     }
 
 
     public function update(PhoneRequest $request, $id)
     {
-        $textNow = $this->phoneRepository->updateOneById($id, $request->all());
-        return new PhoneResource($textNow);
+        $phone = $this->phoneRepository->updateOneById($id, $request->all());
+        return new PhoneResource($phone);
     }
 
 

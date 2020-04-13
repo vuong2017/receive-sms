@@ -26,7 +26,7 @@ class PhoneRequest extends FormRequest
     {
         return [
             'textnow_id' => 'required|exists:text_nows,id',
-            'phone_country_id' =>['required', new CheckItemExitsArray(config('constants.phone_country_id'))],
+            'phone_country_id' => ['required', new CheckItemExitsArray(config('constants.phone_country_id'))],
             'phone_number' => 'required|regex:/[0-9]{9}/',
         ];
     }
