@@ -32,7 +32,6 @@ class PhoneController extends Controller
     public function store(PhoneRequest $request)
     {
         $data = $request->all();
-        $data['create_by'] = $request->user()->id;
         $textNow = $this->phoneRepository->createOne($data);
         return new PhoneResource($textNow);
     }

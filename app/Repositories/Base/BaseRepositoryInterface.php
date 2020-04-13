@@ -3,9 +3,9 @@ namespace App\Repositories\Base;
 
 interface BaseRepositoryInterface {
 
-    public function getDataPagination(int $pageSize);
+    public function getDataPagination(string $with, int $pageSize);
 
-    public function getOneById(int $id);
+    public function getOneById(string $with = "", int $id);
 
     public function createOne(array $data);
 

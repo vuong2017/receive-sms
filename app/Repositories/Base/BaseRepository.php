@@ -22,9 +22,9 @@ abstract class BaseRepository implements BaseRepositoryInterface{
         return $this->model::with($with)->paginate($pageSize);
     }
 
-    public function getOneById(int $id)
+    public function getOneById($with, int $id)
     {
-        return $this->model::findOrFail($id);
+        return $this->model::with($with)->findOrFail($id);
     }
 
 
